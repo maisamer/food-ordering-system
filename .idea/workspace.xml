@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ab77b22-5e8c-4ab2-8fef-4137a7ba16d5" name="Changes" comment="implement event publishing">
-      <change afterPath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/food/ordering/system/order/services/domain/ApplicationDomainEventPublisher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/order-service/order-domain/order-application-service/src/main/java/com/food/ordering/system/order/services/domain/OrderCreatedEventApplicationListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6ab77b22-5e8c-4ab2-8fef-4137a7ba16d5" name="Changes" comment="publish with transactional listener" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,7 +99,7 @@
       <workItem from="1721334691697" duration="1544000" />
       <workItem from="1721383718694" duration="905000" />
       <workItem from="1721388280944" duration="7107000" />
-      <workItem from="1721459016258" duration="13492000" />
+      <workItem from="1721459016258" duration="13862000" />
     </task>
     <task id="LOCAL-00001" summary="init order service">
       <option name="closed" value="true" />
@@ -129,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721476616476</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="publish with transactional listener">
+      <option name="closed" value="true" />
+      <created>1721478694304</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1721478694304</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -138,6 +142,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init order service" />
     <MESSAGE value="implement event publishing" />
-    <option name="LAST_COMMIT_MESSAGE" value="implement event publishing" />
+    <MESSAGE value="publish with transactional listener" />
+    <option name="LAST_COMMIT_MESSAGE" value="publish with transactional listener" />
   </component>
 </project>
