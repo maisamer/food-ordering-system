@@ -90,15 +90,15 @@ public class Order extends AggregateRoot<OrderId> {
             return orderItem.getSubTotal();
         }).reduce(Money.ZERO,Money::add);
         if(!orderItemsTotal.equals(price)){
-            throw new OrderDomainException("Total price " + price.getAmount() +
-                    "is not equals to order items total " + orderItemsTotal.getAmount() + "!");
+            throw new OrderDomainException("Total price: " + price.getAmount() +
+                    " is not equal to Order items total: " + orderItemsTotal.getAmount() + "!");
         }
     }
 
     private void validateItemPrice(OrderItem orderItem) {
         if(!orderItem.isValidPrice()){
-            throw new OrderDomainException("Order item price " + orderItem.getPrice().getAmount() +
-                    "is not valid for product " + orderItem.getProduct().getId().getValue() + "!");
+            throw new OrderDomainException("Order item price: " + orderItem.getPrice().getAmount() +
+                    " is not valid for product " + orderItem.getProduct().getId().getValue() + "!");
         }
     }
 

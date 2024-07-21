@@ -7,7 +7,6 @@ import com.food.ordering.system.order.service.domain.entity.Restaurant;
 import com.food.ordering.system.order.service.domain.event.OrderCreatedEvent;
 import com.food.ordering.system.order.service.domain.exception.OrderDomainException;
 import com.food.ordering.system.order.services.domain.dto.create.CreateOrderCommand;
-import com.food.ordering.system.order.services.domain.dto.create.CreateOrderResponse;
 import com.food.ordering.system.order.services.domain.mapper.OrderDataMapper;
 import com.food.ordering.system.order.services.domain.ports.output.repository.CustomerRepository;
 import com.food.ordering.system.order.services.domain.ports.output.repository.OrderRepository;
@@ -23,7 +22,7 @@ import java.util.UUID;
 @Slf4j
 @Component
 @AllArgsConstructor
-public class OrderCreatedHelper {
+public class OrderCreateHelper {
     private final OrderDomainService orderDomainService;
     private final CustomerRepository customerRepository;
     private final OrderRepository orderRepository;

@@ -20,8 +20,8 @@ public class OrderDomainServiceImp implements OrderDomainService{
     public OrderCreatedEvent validateAndInitializeOrder(Order order, Restaurant restaurant) {
         validateRestaurant(restaurant);
         setOrderProductInformation(order,restaurant);
-        order.validateOrder();
         order.initializeOrder();
+        order.validateOrder();
         log.info("order with id: {} is initialize",order.getId().getValue());
         return new OrderCreatedEvent(order, ZonedDateTime.now(ZoneId.of(ZONE)));
     }
@@ -54,8 +54,8 @@ public class OrderDomainServiceImp implements OrderDomainService{
 
     private void validateRestaurant(Restaurant restaurant) {
         if(!restaurant.isActive()){
-            throw new OrderDomainException("Restaurant with id: "+ restaurant.getId().getValue()
-                + "is not active!");
+            throw new OrderDomainException("Restaurant with id "+ restaurant.getId().getValue()
+                + " is currently not active!");
         }
     }
 
