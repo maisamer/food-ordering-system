@@ -4,23 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ab77b22-5e8c-4ab2-8fef-4137a7ba16d5" name="Changes" comment="fix issues and writing test cases">
-      <change afterPath="$PROJECT_DIR$/infrastructure/docker-compose/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/docker-compose/common.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/docker-compose/init_kafka.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/docker-compose/kafka_cluster.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/docker-compose/zookeeper.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/kafka/kafka-config-data/src/main/java/com/food/ordering/system/kafka/config/data/KafkaConfigData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/kafka/kafka-config-data/src/main/java/com/food/ordering/system/kafka/config/data/KafkaConsumerConfigData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/kafka/kafka-config-data/src/main/java/com/food/ordering/system/kafka/config/data/KafkaProducerConfigData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/kafka/kafka-consumer/src/main/java/com/food/ordering/system/kafka/consumer/configuration/KafkaConsumerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/kafka/kafka-consumer/src/main/java/com/food/ordering/system/kafka/consumer/service/KafkaConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/kafka/kafka-producer/src/main/java/com/food/ordering/system/kafka/producer/KafkaProducerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/kafka/kafka-producer/src/main/java/com/food/ordering/system/kafka/producer/exception/KafkaProducerException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/kafka/kafka-producer/src/main/java/com/food/ordering/system/kafka/producer/service/KafkaProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infrastructure/kafka/kafka-producer/src/main/java/com/food/ordering/system/kafka/producer/service/KafkaProducerImp.java" afterDir="false" />
+    <list default="true" id="6ab77b22-5e8c-4ab2-8fef-4137a7ba16d5" name="Changes" comment="adding kafka module">
+      <change afterPath="$PROJECT_DIR$/common/common-application/src/main/java/com/food/ordering/system/application/handler/ErrorDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/common-application/src/main/java/com/food/ordering/system/application/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/order-application/src/main/java/com/food/ordering/system/order/service/application/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/order-application/src/main/java/com/food/ordering/system/order/service/application/exception/OrderGlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/entity/OrderAddressEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/entity/OrderEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/entity/OrderItemEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/entity/OrderItemEntityId.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-application/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-application/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order-service/order-dataaccess/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/order-service/order-dataaccess/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,7 +64,7 @@
     "git-widget-placeholder": "master",
     "jdk.selected.JAVA_MODULE": "20",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/maisamir/IdeaProjects/food-ordering-system/infrastructure/kafka/kafka-model/src/main/resources",
+    "last_opened_file_path": "/Users/maisamir/IdeaProjects/food-ordering-system/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/entity",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,6 +85,7 @@
       <recent name="com.food.ordering.system.order.service.domain.entity" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/order-service/order-dataaccess/src/main/java/com/food/ordering/system/order/service/dataaccess/entity" />
       <recent name="$PROJECT_DIR$/infrastructure/kafka/kafka-model/src/main/resources" />
       <recent name="$PROJECT_DIR$/infrastructure/kafka/kafka-config-data/src/main/java/com/food/ordering/system/kafka/config/data" />
       <recent name="$PROJECT_DIR$/infrastructure/docker-compose" />
@@ -97,6 +94,7 @@
       <recent name="com.food.ordering.system.order.service.domain.event" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.food.ordering.system.order.service.dataaccess.entity" />
       <recent name="com.food.ordering.system.order.services.domain" />
       <recent name="com.food.ordering.system.order.service.domain.event" />
     </key>
@@ -185,7 +183,9 @@
       <workItem from="1721564644655" duration="156000" />
       <workItem from="1721572766167" duration="3031000" />
       <workItem from="1721591358397" duration="4242000" />
-      <workItem from="1721638347085" duration="5712000" />
+      <workItem from="1721638347085" duration="6671000" />
+      <workItem from="1721665440649" duration="3084000" />
+      <workItem from="1721679370039" duration="5496000" />
     </task>
     <task id="LOCAL-00001" summary="init order service">
       <option name="closed" value="true" />
@@ -235,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721591424071</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="adding kafka module">
+      <option name="closed" value="true" />
+      <created>1721645628001</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1721645628001</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -246,6 +254,7 @@
     <MESSAGE value="ignore idea folder" />
     <MESSAGE value="adding order track handler" />
     <MESSAGE value="fix issues and writing test cases" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix issues and writing test cases" />
+    <MESSAGE value="adding kafka module" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding kafka module" />
   </component>
 </project>

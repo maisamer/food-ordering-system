@@ -20,6 +20,7 @@
         <module>order-service</module>
         <module>common</module>
         <module>infrastructure</module>
+        <module>common/common-application</module>
     </modules>
 
     <properties>
@@ -79,6 +80,11 @@
             <dependency>
                 <groupId>com.food.ordering.system</groupId>
                 <artifactId>kafka-config-data</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.food.ordering.system</groupId>
+                <artifactId>common-application</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
