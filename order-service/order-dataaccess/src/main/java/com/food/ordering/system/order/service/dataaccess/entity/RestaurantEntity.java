@@ -16,7 +16,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @IdClass(RestaurantEntityId.class)
-@Table(name = "order_restaurant_m_view",schema = "customer")
+@Table(name = "order_restaurant_m_view",schema = "restaurant")
 @Entity
 public class RestaurantEntity {
     @Id

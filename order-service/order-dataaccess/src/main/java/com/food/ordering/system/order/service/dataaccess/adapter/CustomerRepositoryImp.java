@@ -5,10 +5,12 @@ import com.food.ordering.system.order.service.dataaccess.repository.CustomerJpaR
 import com.food.ordering.system.order.service.domain.entity.Customer;
 import com.food.ordering.system.order.services.domain.ports.output.repository.CustomerRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 import java.util.UUID;
 
+@Component
 @AllArgsConstructor
 public class CustomerRepositoryImp implements CustomerRepository {
     private final CustomerJpaRepository customerJpaRepository;

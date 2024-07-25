@@ -30,7 +30,7 @@ public class OrderDataAccessMapper {
                 .customerId(order.getCustomerId().getValue())
                 .trackingId(order.getTrackingId().getValue())
                 .address(deliveryAddressToAddressEntity(order.getDeliveryAddress()))
-                .items(orderItemsToOrderItemsEntity(order.getItems()))
+                .items(orderItemsToOrderItemEntities(order.getItems()))
                 .failureMessages(order.getFailureMessages() != null ?
                         String.join(FAILURE_MESSAGES_DELIMITER,order.getFailureMessages()):"")
                 .build();
@@ -74,12 +74,16 @@ public class OrderDataAccessMapper {
                 orderAddress.getCity());
     }
 
-    private List<OrderItemEntity> orderItemsToOrderItemsEntity(List<OrderItem> items) {
-        return items.stream().map(orderItem -> OrderItemEntity.builder()
-                .id(orderItem.getId().getValue())
-
-                .build()
-        ).collect(Collectors.toList());
+    private List<OrderItemEntity> orderItemsToOrderItemEntities(List<OrderItem> items) {
+        return items.stream()
+                .map(orderItem -> OrderItemEntity.builder()
+                        .id(orderItem.getId().getValue())
+                        .productId(orderItem.getProduct().getId().getValue())
+                        .price(orderItem.getPrice().getAmount())
+                        .quantity(orderItem.getQuantity())
+                        .subTotal(orderItem.getSubTotal().getAmount())
+                        .build())
+                .collect(Collectors.toList());
     }
 
     private OrderAddressEntity deliveryAddressToAddressEntity(StreetAddress deliveryAddress){

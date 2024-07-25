@@ -6,9 +6,11 @@ import com.food.ordering.system.order.service.domain.entity.Order;
 import com.food.ordering.system.order.service.domain.valueobject.TrackingId;
 import com.food.ordering.system.order.services.domain.ports.output.repository.OrderRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+@Component
 @AllArgsConstructor
 public class OrderRepositoryImp implements OrderRepository {
     private final OrderJpaRepository orderRepository;
