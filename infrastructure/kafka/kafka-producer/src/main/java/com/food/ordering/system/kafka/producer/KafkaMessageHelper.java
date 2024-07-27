@@ -1,6 +1,5 @@
-package com.food.ordering.system.order.service.messaging.publisher.kafka;
+package com.food.ordering.system.kafka.producer;
 
-import com.food.ordering.system.kafka.order.avro.model.PaymentRequestAvroModel;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.kafka.clients.producer.RecordMetadata;
 import org.springframework.kafka.support.SendResult;
@@ -10,7 +9,7 @@ import java.util.concurrent.CompletableFuture;
 
 @Slf4j
 @Component
-public class OrderKafkaMessageHelper {
+public class KafkaMessageHelper {
     public <T> CompletableFuture<SendResult<String, T>>
     getKafkaCallback(String responseTopicName, T requestAvroModel,String orderId,String requestAvroModelName) {
         return new CompletableFuture<SendResult<String, T>>().handle((result, throwable) -> {
