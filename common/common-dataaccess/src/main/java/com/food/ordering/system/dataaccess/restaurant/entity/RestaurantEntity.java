@@ -1,9 +1,5 @@
-package com.food.ordering.system.order.service.dataaccess.entity;
+package com.food.ordering.system.dataaccess.restaurant.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
-import jakarta.persistence.Table;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -16,9 +12,10 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @IdClass(RestaurantEntityId.class)
-@Table(name = "order_restaurant_m_view",schema = "restaurant")
+@Table(name = "order_restaurant_m_view", schema = "restaurant")
 @Entity
 public class RestaurantEntity {
+
     @Id
     private UUID restaurantId;
     @Id
@@ -27,6 +24,7 @@ public class RestaurantEntity {
     private Boolean restaurantActive;
     private String productName;
     private BigDecimal productPrice;
+    private Boolean productAvailable;
 
     @Override
     public boolean equals(Object o) {
