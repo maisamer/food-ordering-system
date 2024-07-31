@@ -1,6 +1,6 @@
 package com.food.ordering.system.order.services.domain.dto.message;
 
-import com.food.ordering.system.domain.valueobject.OrderApproveStatus;
+import com.food.ordering.system.domain.valueobject.OrderApprovalStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,6 +17,6 @@ public class RestaurantApprovalResponse {
     private String orderId;
     private String restaurantId;
     private Instant createdAt;
-    private OrderApproveStatus orderApproveStatus;
+    private OrderApprovalStatus orderApprovalStatus;
     private final List<String> failureMessages;
 }
