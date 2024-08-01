@@ -1,5 +1,6 @@
 package com.food.ordering.system.order.service.dataaccess.adapter;
 
+import com.food.ordering.system.domain.valueobject.OrderId;
 import com.food.ordering.system.order.service.dataaccess.mapper.OrderDataAccessMapper;
 import com.food.ordering.system.order.service.dataaccess.repository.OrderJpaRepository;
 import com.food.ordering.system.order.service.domain.entity.Order;
@@ -19,6 +20,10 @@ public class OrderRepositoryImp implements OrderRepository {
     public Order save(Order order) {
         return orderDataAccessMapper.orderEntityToOrder(
                 orderRepository.save(orderDataAccessMapper.orderToOrderEntity(order)));
+    }
+    @Override
+    public Optional<Order> findById(OrderId orderId) {
+        return orderRepository.findById(orderId.getValue()).map(orderDataAccessMapper::orderEntityToOrder);
     }
 
     @Override
