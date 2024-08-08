@@ -4,6 +4,7 @@ server:
 logging:
   level:
     com.food.ordering.system: DEBUG
+    org.apache.kafka: DEBUG
 
 order-service:
   payment-request-topic-name: payment-request
@@ -32,13 +33,16 @@ spring:
       platform: postgres
       schema-locations: classpath:init-schema.sql
       mode: always
+  kafka:
+    consumer:
+      max-request-size: 2000000000
 
 kafka-config:
-  bootstrap-servers: localhost:19092, localhost:29092, localhost:39092
+  bootstrap-servers: localhost:19092, localhost:29092
   schema-registry-url-key: schema.registry.url
-  schema-registry-url: http://schema-registry:8081
-  num-of-partitions: 3
-  replication-factor: 3
+  schema-registry-url: http://localhost:8081
+  num-of-partitions: 2
+  replication-factor: 2
 
 kafka-producer-config:
   key-serializer-class: org.apache.kafka.common.serialization.StringSerializer
@@ -50,6 +54,7 @@ kafka-producer-config:
   linger-ms: 5
   request-timeout-ms: 60000
   retry-count: 5
+  max-request-size: 2000000000
 
 kafka-consumer-config:
   key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
@@ -70,3 +75,4 @@ kafka-consumer-config:
   max-partition-fetch-bytes-default: 1048576
   max-partition-fetch-bytes-boost-factor: 1
   poll-timeout-ms: 150
+  fetch-max-bytes: 2000000000
