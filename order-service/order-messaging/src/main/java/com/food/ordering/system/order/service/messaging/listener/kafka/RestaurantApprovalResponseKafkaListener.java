@@ -5,7 +5,7 @@ import com.food.ordering.system.kafka.order.avro.model.OrderApprovalStatus;
 import com.food.ordering.system.kafka.order.avro.model.RestaurantApprovalResponseAvroModel;
 import com.food.ordering.system.order.service.domain.exception.OrderNotFoundException;
 import com.food.ordering.system.order.service.messaging.mapper.OrderMessagingDataMapper;
-import com.food.ordering.system.order.services.domain.ports.input.message.listener.restaurantapproval.RestaurantApprovalResponseMessageListener;
+import com.food.ordering.system.order.service.domain.ports.input.message.listener.restaurantapproval.RestaurantApprovalResponseMessageListener;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.OptimisticLockingFailureException;
@@ -14,7 +14,7 @@ import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
-import static com.food.ordering.system.order.service.domain.entity.Order.FAILURE_MESSAGES_DELIMITER;
+import static com.food.ordering.system.order.service.domain.entity.Order.FAILURE_MESSAGE_DELIMITER;
 
 
 import java.util.List;
@@ -51,7 +51,7 @@ public class RestaurantApprovalResponseKafkaListener implements KafkaConsumer<Re
                 } else if (OrderApprovalStatus.REJECTED == restaurantApprovalResponseAvroModel.getOrderApprovalStatus()) {
                     log.info("Processing rejected order for order id: {}, with failure messages: {}",
                             restaurantApprovalResponseAvroModel.getOrderId(),
-                            String.join(FAILURE_MESSAGES_DELIMITER,
+                            String.join(FAILURE_MESSAGE_DELIMITER,
                                     restaurantApprovalResponseAvroModel.getFailureMessages()));
                     restaurantApprovalResponseMessageListener.orderRejected(orderMessagingDataMapper
                             .approvalResponseAvroModelToApprovalResponse(restaurantApprovalResponseAvroModel));

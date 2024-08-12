@@ -1,10 +1,10 @@
 package com.food.ordering.system.order.service.application.controller;
 
-import com.food.ordering.system.order.services.domain.dto.create.CreateOrderCommand;
-import com.food.ordering.system.order.services.domain.dto.create.CreateOrderResponse;
-import com.food.ordering.system.order.services.domain.dto.track.TrackOrderQuery;
-import com.food.ordering.system.order.services.domain.dto.track.TrackOrderResponse;
-import com.food.ordering.system.order.services.domain.ports.input.service.OrderApplicationService;
+import com.food.ordering.system.order.service.domain.dto.create.CreateOrderCommand;
+import com.food.ordering.system.order.service.domain.dto.create.CreateOrderResponse;
+import com.food.ordering.system.order.service.domain.dto.track.TrackOrderQuery;
+import com.food.ordering.system.order.service.domain.dto.track.TrackOrderResponse;
+import com.food.ordering.system.order.service.domain.ports.input.service.OrderApplicationService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;

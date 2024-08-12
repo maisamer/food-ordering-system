@@ -1,11 +1,8 @@
 package com.food.ordering.system.order.service.domain;
 
-import com.food.ordering.system.order.services.domain.ports.output.message.publisher.payment.OrderCancelledPaymentRequestMessagePublisher;
-import com.food.ordering.system.order.services.domain.ports.output.message.publisher.payment.OrderCreatedPaymentRequestMessagePublisher;
-import com.food.ordering.system.order.services.domain.ports.output.message.publisher.restaurant.OrderPaidRestaurantRequestMessagePublisher;
-import com.food.ordering.system.order.services.domain.ports.output.repository.CustomerRepository;
-import com.food.ordering.system.order.services.domain.ports.output.repository.OrderRepository;
-import com.food.ordering.system.order.services.domain.ports.output.repository.RestaurantRepository;
+import com.food.ordering.system.order.service.domain.ports.output.message.publisher.payment.PaymentRequestMessagePublisher;
+import com.food.ordering.system.order.service.domain.ports.output.message.publisher.restaurant.RestaurantApprovalRequestMessagePublisher;
+import com.food.ordering.system.order.service.domain.ports.output.repository.*;
 import org.mockito.Mockito;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -26,18 +23,21 @@ public class OrderTestConfiguration {
         return Mockito.mock(RestaurantRepository.class);
     }
     @Bean
-    OrderCreatedPaymentRequestMessagePublisher orderCreatedPaymentRequestMessagePublisher(){
-        return Mockito.mock(OrderCreatedPaymentRequestMessagePublisher.class);
+    PaymentOutboxRepository paymentOutboxRepository(){
+        return Mockito.mock(PaymentOutboxRepository.class);
     }
     @Bean
-    OrderCancelledPaymentRequestMessagePublisher orderCancelledPaymentRequestMessagePublisher(){
-        return Mockito.mock(OrderCancelledPaymentRequestMessagePublisher.class);
+    ApprovalOutboxRepository approvalOutboxRepository(){
+        return Mockito.mock(ApprovalOutboxRepository.class);
     }
     @Bean
-    OrderPaidRestaurantRequestMessagePublisher orderPaidRestaurantRequestMessagePublisher(){
-        return Mockito.mock(OrderPaidRestaurantRequestMessagePublisher.class);
+    PaymentRequestMessagePublisher paymentRequestMessagePublisher(){
+        return Mockito.mock(PaymentRequestMessagePublisher.class);
     }
-
+    @Bean
+    RestaurantApprovalRequestMessagePublisher restaurantApprovalRequestMessagePublisher(){
+        return Mockito.mock(RestaurantApprovalRequestMessagePublisher.class);
+    }
     @Bean
     public OrderDomainService orderDomainService(){
         return new OrderDomainServiceImp();

@@ -17,7 +17,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.food.ordering.system.order.service.domain.entity.Order.FAILURE_MESSAGES_DELIMITER;
+import static com.food.ordering.system.order.service.domain.entity.Order.FAILURE_MESSAGE_DELIMITER;
 
 @Component
 public class OrderDataAccessMapper {
@@ -32,7 +32,7 @@ public class OrderDataAccessMapper {
                 .address(deliveryAddressToAddressEntity(order.getDeliveryAddress()))
                 .items(orderItemsToOrderItemEntities(order.getItems()))
                 .failureMessages(order.getFailureMessages() != null ?
-                        String.join(FAILURE_MESSAGES_DELIMITER,order.getFailureMessages()):"")
+                        String.join(FAILURE_MESSAGE_DELIMITER,order.getFailureMessages()):"")
                 .build();
         orderEntity.getAddress().setOrder(orderEntity);
         orderEntity.getItems().forEach(orderItemEntity -> orderItemEntity.setOrder(orderEntity));
@@ -51,7 +51,7 @@ public class OrderDataAccessMapper {
                 .items(orderItemEntitiesToOrderItems(orderEntity.getItems()))
                 .failureMessages(orderEntity.getFailureMessages() != null ?
                         new ArrayList<>(Arrays.asList(orderEntity.getFailureMessages()
-                                .split(FAILURE_MESSAGES_DELIMITER))):
+                                .split(FAILURE_MESSAGE_DELIMITER))):
                         new ArrayList<>())
                 .build();
     }

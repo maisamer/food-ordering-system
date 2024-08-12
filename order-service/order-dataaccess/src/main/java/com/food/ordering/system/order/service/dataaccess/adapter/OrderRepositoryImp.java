@@ -5,7 +5,7 @@ import com.food.ordering.system.order.service.dataaccess.mapper.OrderDataAccessM
 import com.food.ordering.system.order.service.dataaccess.repository.OrderJpaRepository;
 import com.food.ordering.system.order.service.domain.entity.Order;
 import com.food.ordering.system.order.service.domain.valueobject.TrackingId;
-import com.food.ordering.system.order.services.domain.ports.output.repository.OrderRepository;
+import com.food.ordering.system.order.service.domain.ports.output.repository.OrderRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 

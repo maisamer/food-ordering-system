@@ -20,7 +20,7 @@ public class Order extends AggregateRoot<OrderId> {
     private OrderStatus orderStatus;
     private List<String> failureMessages;
 
-    public static final String FAILURE_MESSAGES_DELIMITER = ",";
+    public static final String FAILURE_MESSAGE_DELIMITER = ",";
 
     private Order(Builder builder) {
         super.setId(builder.orderId);
@@ -58,7 +58,7 @@ public class Order extends AggregateRoot<OrderId> {
         if(orderStatus != OrderStatus.PAID){
             throw new OrderDomainException("Order is not in correct state for approve operation!");
         }
-        orderStatus = OrderStatus.APPROVE;
+        orderStatus = OrderStatus.APPROVED;
     }
 
     public void initCancel(List<String> failureMessages){
