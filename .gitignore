@@ -39,3 +39,4 @@ build/
 ### Mac OS ###
 .DS_Store
 /.idea/
+/infrastructure/docker-compose/volumes/kafka/broker-2/.lock
